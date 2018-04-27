@@ -1,0 +1,30 @@
+{
+    "eslint.enable": true,
+    "eslint.options": {
+    "extensions": [ 
+      ".html",
+      ".js",
+      ".vue",
+      ".jsx"
+      ]
+    },
+    "eslint.validate": [{ 
+      "language": "html",
+      "autoFix": true
+    },
+    {
+      "language": "vue",
+      "autoFix": true //Autofix any fixable errors when linting
+    },
+    {
+      "language": "javascript",
+      "autoFix": true
+    },
+    {
+      "language": "javascriptreact",
+      "autoFix": true
+    }
+    ],
+    "eslint.run": "onSave",
+    "eslint.autoFixOnSave": true
+}
