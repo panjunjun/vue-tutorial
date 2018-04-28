@@ -1,22 +1,28 @@
 <template>
   <div id="show-blogs">
     <h1>All Blog Articles</h1>
-    <div class="single-blog" v-for="(blog, index) in blogs" :key="index">
-        <h2>{{blog.title | to-uppercase}}</h2>
+    <input type="text" placeholder="search block" v-model="search"/>
+    <div class="single-blog" v-for="(blog, index) in filteredBlog" :key="index">
+        <h2 v-rainbow>{{blog.title | toUpperCase}}</h2>
         <article>{{blog.body | snippet}}</article>
     </div>
   </div>
 </template>
 
 <script>
- 
+import searchMixin from "../mixins/searchMixin";
+
 export default {
   data () {
     return {
-      blogs: []
+      blogs: [],
+      search: ""
     }
   },
   methods: {
+
+  },
+  computed: {
 
   },
   created () {
@@ -25,7 +31,20 @@ export default {
         this.blogs = data.body.slice(0,10);
       }
     )
-  }
+  },
+  filters: {
+    toUpperCase (value) {
+      return value.toUpperCase();
+    }
+  },
+  directives: {
+    rainbow: {
+      bind(el, binding, vnode){
+        el.style.color = "#" + Math.random().toString().slice(2, 8);
+      }
+    }
+  },
+  mixins: [searchMixin]
 }
 </script>
 
