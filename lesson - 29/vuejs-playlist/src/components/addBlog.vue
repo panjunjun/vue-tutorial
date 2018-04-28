@@ -3,14 +3,15 @@
     <h2>Add A New Blog Post</h2>
     <form>
         <label>Blog Title:</label>
-        <input type="text" required/>
+        <input type="text" v-model="blog.title" required/>
         <label>Blog Content:</label>
-        <textarea></textarea>
+        <textarea v-model.lazy="blog.content"></textarea>
     </form>
     <div id="preview">
         <h3>Preview Blog</h3>
-        <p>Blog title:</p>
+        <p>Blog title: {{blog.title}}</p>
         <p>Blog content:</p>
+        <P>{{blog.content}}</P>
     </div>
   </div>
 </template>
@@ -20,7 +21,10 @@
 export default {
   data () {
     return {
-
+        blog: {
+            title: "",
+            content: ""
+        }
     }
   },
   methods: {
