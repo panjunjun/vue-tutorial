@@ -1,2 +1,5 @@
 https://www.bilibili.com/video/av10323610/?p=1
 https://www.youtube.com/watch?v=5LYrN_cAJoA&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa
+
+与Firebase的连接改成了与后端api对接
+自己写了一个简单的django restframework api
